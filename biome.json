@@ -1,0 +1,89 @@
+{
+  "$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
+  "files": {
+    "ignore": [
+      "node_modules",
+      "**/build",
+      "**/dist",
+      "**/.certs",
+      "**/.husky",
+      "**/.vscode",
+      "**/.next",
+      "**/.caddy",
+      "**/*.svg",
+      "**/*.gif",
+      "**/*.jpeg",
+      "**/*.jpg",
+      "**/*.lock"
+    ]
+  },
+  "organizeImports": {
+    "ignore": [],
+    "enabled": true
+  },
+  "linter": {
+    "enabled": true,
+    "ignore": [],
+    "rules": {
+      "all": true,
+      "style": {
+        "useNamingConvention": "off",
+        "useFilenamingConvention": "off",
+        "useBlockStatements": "off",
+        "noImplicitBoolean": "off",
+        "noDefaultExport": "off",
+        "noNegationElse": "off",
+        "useForOf": "off",
+        "noNonNullAssertion": "off"
+      },
+      "suspicious": {
+        "noConsoleLog": "off",
+        "noArrayIndexKey": "off",
+        "noExplicitAny": "off"
+      },
+      "complexity": {
+        "noExcessiveCognitiveComplexity": {
+          "level": "warn",
+          "options": {
+            "maxAllowedComplexity": 25
+          }
+        },
+        "useSimplifiedLogicExpression": "off"
+      },
+      "correctness": {
+        "noNodejsModules": "off"
+      }
+    }
+  },
+  "formatter": {
+    "enabled": true,
+    "formatWithErrors": true,
+    "indentStyle": "space",
+    "indentWidth": 2,
+    "lineEnding": "lf",
+    "lineWidth": 100,
+    "attributePosition": "auto",
+    "ignore": ["**/node_modules"]
+  },
+  "javascript": {
+    "formatter": {
+      "jsxQuoteStyle": "double",
+      "quoteProperties": "asNeeded",
+      "trailingCommas": "none",
+      "semicolons": "always",
+      "arrowParentheses": "asNeeded",
+      "bracketSpacing": true,
+      "bracketSameLine": false,
+      "quoteStyle": "single",
+      "attributePosition": "auto"
+    }
+  },
+  "overrides": [
+    {
+      "include": ["functions/**"],
+      "javascript": {
+        "globals": ["PagesFunction"]
+      }
+    }
+  ]
+}
